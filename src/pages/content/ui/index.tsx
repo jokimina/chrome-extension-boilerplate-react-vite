@@ -13,7 +13,15 @@ const rootIntoShadow = document.createElement('div');
 rootIntoShadow.id = 'shadow-root';
 
 const shadowRoot = root.attachShadow({ mode: 'open' });
+
+const link = document.createElement('link');
+link.id = 'xcard-style';
+link.rel = 'stylesheet';
+link.href = chrome.runtime.getURL('assets/css/contentStyle.chunk.css'); 
+shadowRoot.appendChild(link);
+
 shadowRoot.appendChild(rootIntoShadow);
+
 
 /**
  * https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite/pull/174
